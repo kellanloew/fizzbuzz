@@ -57,6 +57,18 @@ final class FizzBuzzTest extends TestCase
         $this->assertEquals("fizzbuzz", $fizz->checkForFizzBuzz(150));
     }
 
+    //test reports with 0 iterations
+    public function testReportsWithLimitZero() : void
+    {
+        $fizz = new FizzBuzz();
+        $fizz->program(0);
+        $this->assertEquals(0, $fizz->reportArray["fizz"]);
+        $this->assertEquals(0, $fizz->reportArray["buzz"]);
+        $this->assertEquals(0, $fizz->reportArray["fizzbuzz"]);
+        $this->assertEquals(0, $fizz->reportArray["lucky"]);
+        $this->assertEquals(0, $fizz->reportArray["integer"]);
+    }
+
     //test reports with 20 iterations
     public function testReportsWithLimitTwenty() : void
     {
