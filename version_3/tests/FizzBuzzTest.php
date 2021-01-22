@@ -12,21 +12,21 @@ final class FizzBuzzTest extends TestCase
     public function testCheckForFizzBuzzThree() : void
     {
         $fizz = new FizzBuzz();
-        $this->assertEquals("lucky", $fizz->checkForFizzBuzz(3));
+        $this->assertEquals($fizz->checkForFizzBuzz(3), "lucky");
     }
 
     //multiple of 5
     public function testCheckForFizzBuzzTen() : void
     {
         $fizz = new FizzBuzz();
-        $this->assertEquals("buzz", $fizz->checkForFizzBuzz(10));
+        $this->assertEquals($fizz->checkForFizzBuzz(10), "buzz");
     }
 
     //number with 3
     public function testCheckForFizzBuzzThirteen() : void
     {
         $fizz = new FizzBuzz();
-        $this->assertEquals("lucky", $fizz->checkForFizzBuzz(13));
+        $this->assertEquals($fizz->checkForFizzBuzz(13), "lucky");
     }
 
     //number divisible by 3
@@ -55,5 +55,29 @@ final class FizzBuzzTest extends TestCase
     {
         $fizz = new FizzBuzz();
         $this->assertEquals("fizzbuzz", $fizz->checkForFizzBuzz(150));
+    }
+
+    //test reports with 20 iterations
+    public function testReportsWithLimitTwenty() : void
+    {
+        $fizz = new FizzBuzz();
+        $fizz->program(20);
+        $this->assertEquals(4, $fizz->reportArray["fizz"]);
+        $this->assertEquals(3, $fizz->reportArray["buzz"]);
+        $this->assertEquals(1, $fizz->reportArray["fizzbuzz"]);
+        $this->assertEquals(2, $fizz->reportArray["lucky"]);
+        $this->assertEquals(10, $fizz->reportArray["integer"]);
+    }
+
+    //test reports with 50 iterations
+    public function testReportsWithLimitFifty() : void
+    {
+        $fizz = new FizzBuzz();
+        $fizz->program(50);
+        $this->assertEquals(9, $fizz->reportArray["fizz"]);
+        $this->assertEquals(6, $fizz->reportArray["buzz"]);
+        $this->assertEquals(2, $fizz->reportArray["fizzbuzz"]);
+        $this->assertEquals(14, $fizz->reportArray["lucky"]);
+        $this->assertEquals(19, $fizz->reportArray["integer"]);
     }
 }
