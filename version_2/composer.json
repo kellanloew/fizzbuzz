@@ -1,0 +1,15 @@
+{
+    "name": "ckc/fizzbuzz",
+    "description": "fizzbuzz test 1",
+    "require": {
+        "php": ">=5.5.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "scripts": {
+        "execute": "FizzBuzz::execute",
+        "test": "phpunit tests"
+    }
+}
